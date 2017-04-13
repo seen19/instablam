@@ -12,15 +12,17 @@ public class sendToProgram
 
         try
         {
-            conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306" + "user=root&password=toor");
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306","root","toor");
             stmt = conn.createStatement();
 
+            //result = stmt.executeQuery("SELECT FROM ")
+            System.out.println("All good so far");
         }
         catch (SQLException e)
         {
             System.out.println("SQL Error");
-        }
-        finally
+        } catch (ClassNotFoundException e) {} finally
         {
             try
             {
