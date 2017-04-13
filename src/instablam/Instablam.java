@@ -5,17 +5,37 @@
  */
 package instablam;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author james
  */
 public class Instablam {
+    
+    static ArrayList<User> userAccounts;
+    static User loggedInUser;
+    
+    static User login(String username, String password)
+            throws UsernameNotFoundException, IncorrectPasswordException {
+        for (User user : userAccounts) {
+            if (user.getUsername().equals(username)) {
+                if (user.getPassword().equals(password)) {
+                    return user;
+                } else {
+                    throw new IncorrectPasswordException();
+                }
+            }
+        }
+        throw new UsernameNotFoundException();
+    }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        userAccounts = new ArrayList<User>();
     }
     
 }
