@@ -17,6 +17,11 @@ public class User {
     private String password;
     private ArrayList<User> followers;
     private ArrayList<User> following;
+    
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     /**
      * @return the username
@@ -72,5 +77,9 @@ public class User {
      */
     public void setFollowing(ArrayList<User> following) {
         this.following = following;
+    }
+    
+    public String toString() {
+        return username + " " + password;
     }
 }
