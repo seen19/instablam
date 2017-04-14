@@ -17,12 +17,13 @@ public class Instablam {
     static ArrayList<User> userAccounts;
     static User loggedInUser;
     
-    static User login(String username, String password)
+    static void login(String username, String password)
             throws UsernameNotFoundException, IncorrectPasswordException {
         for (User user : userAccounts) {
             if (user.getUsername().equals(username)) {
                 if (user.getPassword().equals(password)) {
-                    return user;
+                    loggedInUser = user;
+                    return;
                 } else {
                     throw new IncorrectPasswordException();
                 }
