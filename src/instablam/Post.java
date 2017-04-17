@@ -18,6 +18,14 @@ public class Post {
     private int likes;
     private ArrayList<String> comments;
     private LocalDateTime postingTime;
+    
+    public Post(User posting, String file) {
+        this.postingAccount = posting;
+        this.imageFile = file;
+        likes = 0;
+        comments = new ArrayList<>();
+        this.postingTime = LocalDateTime.now();
+    }
 
     /**
      * @return the imageFile

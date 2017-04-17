@@ -33,6 +33,10 @@ public class Instablam {
         throw new UsernameNotFoundException();
     }
     
+    static void addPost(Post toAdd) {
+        posts.add(0, toAdd);
+    }
+    
     static ArrayList<Post> getTimeline() {
         ArrayList<Post> timeline = new ArrayList<>();
         for (Post post : posts) {

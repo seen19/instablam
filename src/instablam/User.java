@@ -65,6 +65,9 @@ public class User {
         return following;
     }
     
+    /*public ArrayList<Post> getPosts() {
+    }*/
+    
     public void addFollower(User follower) {
         followers.add(follower);
     }
