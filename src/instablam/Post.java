@@ -5,6 +5,7 @@
  */
 package instablam;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**
@@ -13,9 +14,10 @@ import java.util.ArrayList;
  */
 public class Post {
     private String imageFile;
-    private User postingAcount;
+    private User postingAccount;
     private int likes;
     private ArrayList<String> comments;
+    private LocalDateTime postingTime;
 
     /**
      * @return the imageFile
@@ -27,8 +29,8 @@ public class Post {
     /**
      * @return the postingAcount
      */
-    public User getPostingAcount() {
-        return postingAcount;
+    public User getPostingAccount() {
+        return postingAccount;
     }
 
     /**

@@ -6,7 +6,6 @@
 package instablam;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *
@@ -16,6 +15,8 @@ public class Instablam {
     
     static ArrayList<User> userAccounts;
     static User loggedInUser;
+    
+    static ArrayList<Post> posts;
     
     static void login(String username, String password)
             throws UsernameNotFoundException, IncorrectPasswordException {
@@ -30,6 +31,16 @@ public class Instablam {
             }
         }
         throw new UsernameNotFoundException();
+    }
+    
+    static ArrayList<Post> getTimeline() {
+        ArrayList<Post> timeline = new ArrayList<>();
+        for (Post post : posts) {
+            if (post.getPostingAccount().equals(loggedInUser)) {
+                timeline.add(post);
+            }
+        }
+        return timeline;
     }
 
     /**

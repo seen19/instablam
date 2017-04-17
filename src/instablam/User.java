@@ -81,6 +81,13 @@ public class User {
         following.remove(toFollow);
     }
     
+    public boolean equals(User other) {
+        if (username.equals(other.getUsername())) {
+            return true;
+        }
+        return false;
+    }
+    
     public String toString() {
         return username + " " + password;
     }
