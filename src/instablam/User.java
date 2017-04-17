@@ -59,24 +59,26 @@ public class User {
     }
 
     /**
-     * @param followers the followers to set
-     */
-    public void setFollowers(ArrayList<User> followers) {
-        this.followers = followers;
-    }
-
-    /**
      * @return the following
      */
     public ArrayList<User> getFollowing() {
         return following;
     }
-
-    /**
-     * @param following the following to set
-     */
-    public void setFollowing(ArrayList<User> following) {
-        this.following = following;
+    
+    public void addFollower(User follower) {
+        followers.add(follower);
+    }
+    
+    public void removeFollower(User follower) {
+        followers.remove(follower);
+    }
+    
+    public void addFollowing(User toFollow) {
+        following.add(toFollow);
+    }
+    
+    public void removeFollowing(User toFollow) {
+        following.remove(toFollow);
     }
     
     public String toString() {
