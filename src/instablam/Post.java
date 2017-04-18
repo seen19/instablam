@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class Post {
     private String imageFile;
     private User postingAccount;
+    private boolean publicPost;
     private int likes;
     private String caption;
     private ArrayList<String> comments;
@@ -79,5 +80,19 @@ public class Post {
      */
     public void like() {
         likes++;
+    }
+
+    /**
+     * @return the publicPost
+     */
+    public boolean isPublicPost() {
+        return publicPost;
+    }
+
+    /**
+     * @param publicPost the publicPost to set
+     */
+    public void setPublicPost(boolean publicPost) {
+        this.publicPost = publicPost;
     }
 }
