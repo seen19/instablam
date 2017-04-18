@@ -18,7 +18,13 @@ public class Instablam {
     
     static ArrayList<Post> posts;
     
-    static void register(String username, String password) {
+    static void register(String username, String password)
+            throws UsernameAlreadyInUseException {
+        for (User user : userAccounts) {
+            if (user.getUsername().equals(username)) {
+                throw new UsernameAlreadyInUseException();
+            }
+        }
         userAccounts.add(new User(username, password));
     }
     
