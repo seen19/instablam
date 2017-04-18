@@ -37,6 +37,10 @@ public class Instablam {
         posts.add(0, toAdd);
     }
     
+    static void commentOnPost(Post post, String comment) {
+        post.addComment(loggedInUser.getUsername() + ": " + comment);
+    }
+    
     static ArrayList<Post> getTimeline() {
         ArrayList<Post> timeline = new ArrayList<>();
         for (Post post : posts) {

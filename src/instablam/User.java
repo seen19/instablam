@@ -15,6 +15,7 @@ public class User {
     
     private String username;
     private String password;
+    private String profile;
     private ArrayList<User> followers;
     private ArrayList<User> following;
     
@@ -49,6 +50,20 @@ public class User {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    /**
+     * @return the profile
+     */
+    public String getProfile() {
+        return profile;
+    }
+
+    /**
+     * @param profile the profile to set
+     */
+    public void setProfile(String profile) {
+        this.profile = profile;
     }
 
     /**

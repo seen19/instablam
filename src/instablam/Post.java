@@ -47,6 +47,10 @@ public class Post {
     public int getLikes() {
         return likes;
     }
+    
+    public void addComment(String comment) {
+        comments.add(0, comment);
+    }
 
     /**
      * @return the comments
