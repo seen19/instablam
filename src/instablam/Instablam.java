@@ -54,7 +54,7 @@ public class Instablam {
     static ArrayList<Post> getTimeline() {
         ArrayList<Post> timeline = new ArrayList<>();
         for (Post post : posts) {
-            if (post.getPostingAccount().equals(loggedInUser)) {
+            if (post.getPostingAccount().getFollowers().contains(loggedInUser)) {
                 timeline.add(post);
             }
         }
