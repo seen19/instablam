@@ -14,15 +14,23 @@ public class sendToProgram
         {
             Class.forName("com.mysql.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306","root","toor");
+            conn.setCatalog("demo");
             stmt = conn.createStatement();
-
-            //result = stmt.executeQuery("SELECT FROM ")
-            System.out.println("All good so far");
+            String newTable = "CREATE TABLE demo.USER_Bob " +
+                            "(id INTEGER not NULL, " +
+                            "first VARCHAR(255), " +
+                            "last VARCHAR(255), " +
+                            "age INTEGER, " +
+                            "PRIMARY KEY ( id ))";
+            stmt.executeUpdate(newTable);
+            System.out.println("update successful");
         }
         catch (SQLException e)
         {
             System.out.println("SQL Error");
-        } catch (ClassNotFoundException e) {} finally
+        } catch (ClassNotFoundException e) {}
+
+        finally
         {
             try
             {
@@ -30,11 +38,6 @@ public class sendToProgram
             }
             catch (SQLException e) {}
 
-            try
-            {
-                result.close();
-            }
-            catch (SQLException e) {}
         }
     }
 }
