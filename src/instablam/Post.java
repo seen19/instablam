@@ -16,6 +16,7 @@ public class Post {
     private String imageFile;
     private User postingAccount;
     private int likes;
+    private String caption;
     private ArrayList<String> comments;
     private LocalDateTime postingTime;
     
@@ -57,6 +58,20 @@ public class Post {
      */
     public ArrayList<String> getComments() {
         return comments;
+    }
+    
+    /**
+     * @return the caption
+     */
+    public String getCaption() {
+        return caption;
+    }
+
+    /**
+     * @param caption the caption to set
+     */
+    public void setCaption(String caption) {
+        this.caption = caption;
     }
     
     /**

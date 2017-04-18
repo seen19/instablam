@@ -18,6 +18,10 @@ public class Instablam {
     
     static ArrayList<Post> posts;
     
+    static void register(String username, String password) {
+        userAccounts.add(new User(username, password));
+    }
+    
     static void login(String username, String password)
             throws UsernameNotFoundException, IncorrectPasswordException {
         for (User user : userAccounts) {
