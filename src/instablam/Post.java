@@ -49,7 +49,7 @@ public class Post {
     }
     
     public void addComment(String comment) {
-        comments.add(0, comment);
+        comments.add(comment);
     }
 
     /**
