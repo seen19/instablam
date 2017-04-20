@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Instablam {
     
-    static ArrayList<User> userAccounts;
+    public static ArrayList<User> userAccounts;
     static User loggedInUser;
     
     static ArrayList<Post> posts;
@@ -64,8 +64,16 @@ public class Instablam {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         userAccounts = new ArrayList<User>();
+        Database.startAndLoad();
+        User alpha = new User("jane","root");
+        User beta = new User("karly","thomas");
+        beta.setProfile("blah blab");
+        userAccounts.add(alpha);
+        userAccounts.add(beta);
+        Database.saveAndShutdown();
     }
     
 }

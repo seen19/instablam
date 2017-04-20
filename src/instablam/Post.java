@@ -6,6 +6,7 @@
 package instablam;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 /**
@@ -19,14 +20,15 @@ public class Post {
     private int likes;
     private String caption;
     private ArrayList<String> comments;
-    private LocalDateTime postingTime;
+    private String postingTime;
     
-    public Post(User posting, String file) {
+    public Post(User posting, String file, boolean publicPost) {
         this.postingAccount = posting;
         this.imageFile = file;
         likes = 0;
         comments = new ArrayList<>();
-        this.postingTime = LocalDateTime.now();
+        this.postingTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm:ss"));
+        this.publicPost = publicPost;
     }
 
     /**

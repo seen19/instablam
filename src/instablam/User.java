@@ -18,6 +18,7 @@ public class User {
     private String profile;
     private ArrayList<User> followers;
     private ArrayList<User> following;
+    private ArrayList<User> allUsers;
     
     public User(String username, String password) {
         this.username = username;
