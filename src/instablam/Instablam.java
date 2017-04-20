@@ -18,14 +18,14 @@ public class Instablam {
     
     static ArrayList<Post> posts;
     
-    static void register(String username, String password)
-            throws UsernameAlreadyInUseException {
+    static boolean register(String username, String password) {
         for (User user : userAccounts) {
             if (user.getUsername().equals(username)) {
-                throw new UsernameAlreadyInUseException();
+                return false;
             }
         }
         userAccounts.add(new User(username, password));
+        return true;
     }
     
     static void login(String username, String password)
