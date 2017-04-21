@@ -69,19 +69,15 @@ public class Instablam {
     {
         userAccounts = new ArrayList<User>();
         Database.startAndLoad();
-        User alpha = new User("jane","root");
-        User beta = new User("karly","thomas");
-        beta.setProfile("blah blab");
+        //User alpha = new User("test","root");
+        //User beta = new User("karly","onlytest");
+        //beta.setProfile("blah blab");
         Post charlie = new Post("C:/test/pics/apic.jpeg" , false);
         Post delta = new Post("D:/blah/blah/stuff.png" , false);
-        alpha.addPostToUser(charlie);
-        beta.addPostToUser(delta);
-        ArrayList<Post> alphaPosts = alpha.getPosts();
-        ArrayList<Post> betaPost = beta.getPosts();
-        System.out.println(alpha.getPosts().get(0).toString());
-        System.out.println(beta.getPosts().get(0).toString());
-        userAccounts.add(alpha);
-        userAccounts.add(beta);
+        userAccounts.get(0).addPostToUser(charlie);
+        userAccounts.get(1).addPostToUser(delta);
+        //ArrayList<Post> alphaPosts = alpha.getPosts();
+        //ArrayList<Post> betaPost = beta.getPosts();
         Database.saveAndShutdown();
     }
     

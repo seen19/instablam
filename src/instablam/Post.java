@@ -6,7 +6,6 @@
 package instablam;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 /**
@@ -27,7 +26,7 @@ public class Post {
         this.imageFile = file;
         likes = 0;
         comments = new ArrayList<>();
-        this.postingTime = LocalDateTime.now();//.format(DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm:ss"));
+        this.postingTime = LocalDateTime.now();
         this.publicPost = publicPost;
     }
     /**
@@ -96,4 +95,6 @@ public class Post {
     public void setPublicPost(boolean publicPost) {
         this.publicPost = publicPost;
     }
+
+    public LocalDateTime getPostingTime() {return postingTime;}
 }
