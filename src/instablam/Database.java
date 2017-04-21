@@ -92,9 +92,13 @@ public class Database
                         "(file_path VARCHAR(255) not NULL, " +
                         "is_public VARCHAR(10) not NULL, " +
                         "number_likes INT not NULL, " +
+                        "caption VARCHAR(200)" +
+                        "comments VARCHAR(1000)" +
                         "PRIMARY KEY ( username ))";
-                stmt.executeUpdate(createTable);
+                stmt.executeUpdate(createPostTable);
                 System.out.println("Table Created");
+                //for (Post )
+                  //  String currentPost = Post.g
             }
         }
         catch (SQLException e)

@@ -20,17 +20,16 @@ public class Post {
     private int likes;
     private String caption;
     private ArrayList<String> comments;
-    private String postingTime;
+    private LocalDateTime postingTime;
     
-    public Post(User posting, String file, boolean publicPost) {
-        this.postingAccount = posting;
+    public Post(/*User posting,*/ String file, boolean publicPost) {
+        //this.postingAccount = posting;
         this.imageFile = file;
         likes = 0;
         comments = new ArrayList<>();
-        this.postingTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm:ss"));
+        this.postingTime = LocalDateTime.now();//.format(DateTimeFormatter.ofPattern("MM-dd-yyyy hh:mm:ss"));
         this.publicPost = publicPost;
     }
-
     /**
      * @return the imageFile
      */

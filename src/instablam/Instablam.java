@@ -16,7 +16,7 @@ public class Instablam {
     public static ArrayList<User> userAccounts;
     static User loggedInUser;
     
-    static ArrayList<Post> posts;
+    public static ArrayList<Post> posts;
     
     static void register(String username, String password)
             throws UsernameAlreadyInUseException {
@@ -43,7 +43,8 @@ public class Instablam {
         throw new UsernameNotFoundException();
     }
     
-    static void addPost(Post toAdd) {
+     public static void addPost(Post toAdd, User userPosting)
+    {
         posts.add(0, toAdd);
     }
     
@@ -71,6 +72,14 @@ public class Instablam {
         User alpha = new User("jane","root");
         User beta = new User("karly","thomas");
         beta.setProfile("blah blab");
+        Post charlie = new Post("C:/test/pics/apic.jpeg" , false);
+        Post delta = new Post("D:/blah/blah/stuff.png" , false);
+        alpha.addPostToUser(charlie);
+        beta.addPostToUser(delta);
+        ArrayList<Post> alphaPosts = alpha.getPosts();
+        ArrayList<Post> betaPost = beta.getPosts();
+        System.out.println(alpha.getPosts().get(0).toString());
+        System.out.println(beta.getPosts().get(0).toString());
         userAccounts.add(alpha);
         userAccounts.add(beta);
         Database.saveAndShutdown();

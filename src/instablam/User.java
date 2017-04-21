@@ -18,13 +18,13 @@ public class User {
     private String profile;
     private ArrayList<User> followers;
     private ArrayList<User> following;
-    private ArrayList<User> allUsers;
+    public ArrayList<Post> userPosts;
     
     public User(String username, String password) {
         this.username = username;
         this.password = password;
+        userPosts = new ArrayList<Post>();
     }
-
     /**
      * @return the username
      */
@@ -110,4 +110,10 @@ public class User {
     public String toString() {
         return username + " " + password;
     }
+
+    public void addPostToUser(Post newPost)
+    {
+        userPosts.add(0 , newPost);
+    }
+    public ArrayList<Post> getPosts() {return userPosts;}
 }
